@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Консультация по кредиту и ипотеке — демо «Северный контур»</title>
+  <meta name="description" content="Демо-лендинг ниши «Финансовые услуги»: заявка на консультацию по кредиту, рефинансированию и страхованию. Это не банк и не оферта.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://damn-sky.github.io/finance-landing/">
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <p class="demo-bar">Демо Damnsky. Это не банк, не оферта и не расчёт для договора.</p>
+
+  <header class="header">
+    <a class="logo" href="#top">Северный контур</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button>
+    <nav id="site-nav">
+      <a href="#services">Услуги</a>
+      <a href="#calc">Расчёт</a>
+      <a href="#steps">Как проходит</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <a class="btn btn-small" href="#order">Оставить заявку</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img class="hero-photo" src="img/hero.jpg" width="1600" height="900" alt="Спокойный кабинет для финансовой консультации">
+      <div class="hero-copy">
+        <p class="eyebrow">Консультация · 30 минут · онлайн</p>
+        <h1>Заявка на разбор кредита, ипотеки или рефинансирования</h1>
+        <p class="lead">Сначала выясняем задачу и документы. Потом говорим, какой продукт вообще имеет смысл смотреть. Ставку в договоре здесь не обещаем.</p>
+        <a class="btn" href="#order">Записаться на разбор</a>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>С чем разбираем заявку</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Кредит и рефинансирование</h3>
+          <p>Смотрим текущий платёж, срок и можно ли уменьшить переплату без нового хаоса в договорах.</p>
+        </article>
+        <article class="card">
+          <h3>Ипотека</h3>
+          <p>Первый взнос, срок и ежемесячный платёж, который реально тянет бюджет, а не только калькулятор.</p>
+        </article>
+        <article class="card">
+          <h3>Страхование к сделке</h3>
+          <p>Что требуют вместе с кредитом, что можно сравнить и что не стоит брать «в пакете не глядя».</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="calc">
+      <h2>Черновой платёж</h2>
+      <p class="section-lead">Цифра для разговора, не предложение банка. Ставка в примере зафиксирована на 16% годовых, только чтобы показать формулу.</p>
+      <form class="calc" id="calc-form">
+        <label>Сумма, ₽
+          <input id="amount" type="number" min="100000" max="30000000" step="50000" value="2500000">
+        </label>
+        <label>Срок, месяцев
+          <input id="months" type="number" min="6" max="360" step="1" value="60">
+        </label>
+        <p class="calc-result"><span>Платёж в примере</span> <strong id="payment">—</strong></p>
+      </form>
+    </section>
+
+    <section id="steps">
+      <h2>Как проходит консультация</h2>
+      <ol class="steps">
+        <li><strong>1</strong> Заявка: имя, телефон и что хотите разобрать.</li>
+        <li><strong>2</strong> Короткий созвон: доход, уже открытые кредиты, срок.</li>
+        <li><strong>3</strong> Список документов и понятный следующий шаг. Без обещания одобрения.</li>
+      </ol>
+    </section>
+
+    <section id="faq">
+      <h2>Вопросы</h2>
+      <details>
+        <summary>Вы банк?</summary>
+        <p>Нет. Это демонстрационная страница портфолио. Заявку никто не рассматривает.</p>
+      </details>
+      <details>
+        <summary>Почему платёж на странице не равен договору?</summary>
+        <p>Калькулятор показывает аннуитет по учебной ставке 16%. Банк считает свою ставку, страховку и комиссии отдельно.</p>
+      </details>
+      <details>
+        <summary>Что будет после кнопки «Отправить»?</summary>
+        <p>Появится карточка подтверждения на этом экране. Данные никуда не уходят.</p>
+      </details>
+    </section>
+
+    <section id="order">
+      <h2>Заявка на консультацию</h2>
+      <p class="section-lead">Напишите, что разобрать. Это демо: менеджер не перезвонит.</p>
+      <form id="lead-form">
+        <label>Имя
+          <input name="name" required minlength="2" autocomplete="name" placeholder="Как к вам обращаться">
+        </label>
+        <label>Телефон
+          <input name="phone" required autocomplete="tel" inputmode="tel" pattern="\+?[0-9\s\-()]{10,18}" placeholder="+7 978 000-00-00">
+        </label>
+        <label>Тема
+          <select name="topic" id="topic">
+            <option>Кредит</option>
+            <option>Рефинансирование</option>
+            <option>Ипотека</option>
+            <option>Страхование</option>
+          </select>
+        </label>
+        <button class="btn" type="submit">Отправить заявку</button>
+      </form>
+      <div id="form-note" class="form-note" role="status" hidden>
+        <p class="form-note-mark">Заявка принята</p>
+        <p id="form-note-text"></p>
+        <p class="form-note-hint">Это демо: звонка не будет, данные не сохраняются.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <p class="logo">Северный контур</p>
+      <p>Демо-лендинг ниши «Финансовые услуги». Не является кредитной организацией.</p>
+    </div>
+    <nav aria-label="Подвал">
+      <a href="#services">Услуги</a>
+      <a href="#calc">Расчёт</a>
+      <a href="#order">Заявка</a>
+    </nav>
+    <div>
+      <p>Консультация онлайн</p>
+      <p><a href="https://t.me/damn_sky">Telegram @damn_sky</a></p>
+    </div>
+  </footer>
+  <a class="mobile-cta" href="#order">Оставить заявку</a>
+  <script src="main.js?v=1"></script>
+</body>
+</html>
