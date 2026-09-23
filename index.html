@@ -7,7 +7,7 @@
   <meta name="description" content="Демо-лендинг ниши «Финансовые услуги»: заявка на консультацию по кредиту, рефинансированию и страхованию. Это не банк и не оферта.">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://damn-sky.github.io/finance-landing/">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
   <header class="header">
@@ -15,8 +15,9 @@
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button>
     <nav id="site-nav">
       <a href="#services">Услуги</a>
+      <a href="#team">Специалисты</a>
+      <a href="#reels">Рилы</a>
       <a href="#calc">Расчёт</a>
-      <a href="#steps">Как проходит</a>
       <a href="#faq">Вопросы</a>
     </nav>
     <a class="btn btn-small" href="#order">Оставить заявку</a>
@@ -51,6 +52,31 @@
       </div>
     </section>
 
+    <section id="team">
+      <h2>Кто разбирает заявку</h2>
+      <p class="section-lead">Демо-портреты для макета. Это не сотрудники банка и не реальные консультанты.</p>
+      <div class="grid grid-3">
+        <article class="card person">
+          <img src="img/spec-1.jpg" width="600" height="800" alt="Марина Ковалева" loading="lazy">
+          <h3>Марина Ковалева</h3>
+          <p class="tenure">8 лет</p>
+          <p>Ипотека и рефинансирование. Сверяет платёж с бюджетом, а не только со ставкой.</p>
+        </article>
+        <article class="card person">
+          <img src="img/spec-2.jpg" width="600" height="800" alt="Андрей Левин" loading="lazy">
+          <h3>Андрей Левин</h3>
+          <p class="tenure">11 лет</p>
+          <p>Потребительские кредиты. Смотрит уже открытые договоры, чтобы не собрать второй платёж поверх первого.</p>
+        </article>
+        <article class="card person">
+          <img src="img/spec-3.jpg" width="600" height="800" alt="Ольга Сергеева" loading="lazy">
+          <h3>Ольга Сергеева</h3>
+          <p class="tenure">6 лет</p>
+          <p>Страхование к сделке. Отделяет то, что требует банк, от того, что можно сравнить отдельно.</p>
+        </article>
+      </div>
+    </section>
+
     <section id="calc">
       <h2>Черновой платёж</h2>
       <p class="section-lead">Цифра для разговора, не предложение банка. Ставка в примере зафиксирована на 16% годовых, только чтобы показать формулу.</p>
@@ -72,6 +98,35 @@
         <li><strong>2</strong> Короткий созвон: доход, уже открытые кредиты, срок.</li>
         <li><strong>3</strong> Список документов и понятный следующий шаг. Без обещания одобрения.</li>
       </ol>
+    </section>
+
+    <section id="reels">
+      <h2>Короткие разборы</h2>
+      <p class="section-lead">Листайте вбок. Нажатие открывает кадр на несколько секунд: отдельных видеофайлов в этом демо нет.</p>
+      <div class="reel-wrap">
+        <button class="reel-arrow" type="button" id="reel-prev" aria-label="Предыдущий рил">←</button>
+        <div class="reels" id="reel-track">
+          <button class="reel" type="button" data-title="Платёж по ипотеке">
+            <img src="img/reel-1.jpg" width="360" height="640" alt="Разбор платежа по ипотеке за столом" loading="lazy">
+            <span>Платёж по ипотеке</span>
+          </button>
+          <button class="reel" type="button" data-title="Страховка к кредиту">
+            <img src="img/reel-2.jpg" width="360" height="640" alt="Сравнение страховых условий" loading="lazy">
+            <span>Страховка к кредиту</span>
+          </button>
+          <button class="reel" type="button" data-title="Первая консультация">
+            <img src="img/reel-3.jpg" width="360" height="640" alt="Консультация за столом" loading="lazy">
+            <span>Первая консультация</span>
+          </button>
+        </div>
+        <button class="reel-arrow" type="button" id="reel-next" aria-label="Следующий рил">→</button>
+      </div>
+      <div class="reel-player" id="reel-player" hidden>
+        <button class="reel-close" type="button" id="reel-close">Закрыть</button>
+        <img id="reel-player-img" alt="">
+        <p id="reel-player-title"></p>
+        <i id="reel-progress"></i>
+      </div>
     </section>
 
     <section id="faq">
@@ -144,6 +199,6 @@
     </div>
   </footer>
   <a class="mobile-cta" href="#order">Оставить заявку</a>
-  <script src="main.js?v=2"></script>
+  <script src="main.js?v=3"></script>
 </body>
 </html>

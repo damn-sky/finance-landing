@@ -39,6 +39,33 @@ nav.querySelectorAll("a").forEach((link) => {
   });
 });
 
+const reelTrack = document.querySelector("#reel-track");
+const reelPlayer = document.querySelector("#reel-player");
+const reelImg = document.querySelector("#reel-player-img");
+const reelTitle = document.querySelector("#reel-player-title");
+const reelProgress = document.querySelector("#reel-progress");
+
+document.querySelector("#reel-prev").addEventListener("click", () => {
+  reelTrack.scrollBy({ left: -220, behavior: "smooth" });
+});
+document.querySelector("#reel-next").addEventListener("click", () => {
+  reelTrack.scrollBy({ left: 220, behavior: "smooth" });
+});
+
+document.querySelectorAll(".reel").forEach((card) => {
+  card.addEventListener("click", () => {
+    reelImg.src = card.querySelector("img").src;
+    reelImg.alt = card.dataset.title;
+    reelTitle.textContent = card.dataset.title;
+    reelProgress.innerHTML = "";
+    reelPlayer.hidden = false;
+  });
+});
+
+document.querySelector("#reel-close").addEventListener("click", () => {
+  reelPlayer.hidden = true;
+});
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   if (!form.checkValidity()) {
