@@ -46,7 +46,7 @@ form.addEventListener("submit", (event) => {
     return;
   }
   const data = new FormData(form);
-  noteText.textContent = data.get("name") + ", тема «" + data.get("topic") + "».";
+  noteText.textContent = data.get("name") + ", " + data.get("city") + ", «" + data.get("topic") + "», " + data.get("sum") + ".";
   note.hidden = false;
   form.classList.add("is-sent");
 });

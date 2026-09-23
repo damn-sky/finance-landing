@@ -7,11 +7,9 @@
   <meta name="description" content="Демо-лендинг ниши «Финансовые услуги»: заявка на консультацию по кредиту, рефинансированию и страхованию. Это не банк и не оферта.">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://damn-sky.github.io/finance-landing/">
-  <link rel="stylesheet" href="styles.css?v=1">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
-  <p class="demo-bar">Демо Damnsky. Это не банк, не оферта и не расчёт для договора.</p>
-
   <header class="header">
     <a class="logo" href="#top">Северный контур</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button>
@@ -63,7 +61,7 @@
         <label>Срок, месяцев
           <input id="months" type="number" min="6" max="360" step="1" value="60">
         </label>
-        <p class="calc-result"><span>Платёж в примере</span> <strong id="payment">—</strong></p>
+        <p class="calc-result"><span>Платёж в месяц, учебный пример</span> <strong id="payment">—</strong></p>
       </form>
     </section>
 
@@ -102,6 +100,16 @@
         <label>Телефон
           <input name="phone" required autocomplete="tel" inputmode="tel" pattern="\+?[0-9\s\-()]{10,18}" placeholder="+7 978 000-00-00">
         </label>
+        <label>Город
+          <input name="city" required minlength="2" placeholder="Симферополь">
+        </label>
+        <label>Сумма, которую разбираем
+          <select name="sum">
+            <option>до 500 000 ₽</option>
+            <option>500 000–2 000 000 ₽</option>
+            <option>больше 2 000 000 ₽</option>
+          </select>
+        </label>
         <label>Тема
           <select name="topic" id="topic">
             <option>Кредит</option>
@@ -136,6 +144,6 @@
     </div>
   </footer>
   <a class="mobile-cta" href="#order">Оставить заявку</a>
-  <script src="main.js?v=1"></script>
+  <script src="main.js?v=2"></script>
 </body>
 </html>
