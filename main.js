@@ -46,14 +46,40 @@ const reelTitle = document.querySelector("#reel-player-title");
 const reelProgress = document.querySelector("#reel-progress");
 
 document.querySelector("#reel-prev").addEventListener("click", () => {
-  reelTrack.scrollBy({ left: -220, behavior: "smooth" });
+  reelTrack.scrollBy({ left: -300, behavior: "smooth" });
 });
 document.querySelector("#reel-next").addEventListener("click", () => {
-  reelTrack.scrollBy({ left: 220, behavior: "smooth" });
+  reelTrack.scrollBy({ left: 300, behavior: "smooth" });
 });
+
+let dragStart = 0;
+let dragScroll = 0;
+let dragging = false;
+let dragMoved = false;
+reelTrack.addEventListener("pointerdown", (event) => {
+  dragging = true;
+  dragMoved = false;
+  dragStart = event.clientX;
+  dragScroll = reelTrack.scrollLeft;
+  reelTrack.classList.add("is-dragging");
+  reelTrack.setPointerCapture(event.pointerId);
+});
+reelTrack.addEventListener("pointermove", (event) => {
+  if (!dragging) return;
+  const delta = event.clientX - dragStart;
+  if (Math.abs(delta) > 6) dragMoved = true;
+  reelTrack.scrollLeft = dragScroll - delta;
+});
+function stopDrag() {
+  dragging = false;
+  reelTrack.classList.remove("is-dragging");
+}
+reelTrack.addEventListener("pointerup", stopDrag);
+reelTrack.addEventListener("pointerleave", stopDrag);
 
 document.querySelectorAll(".reel").forEach((card) => {
   card.addEventListener("click", () => {
+    if (dragMoved) return;
     reelImg.src = card.querySelector("img").src;
     reelImg.alt = card.dataset.title;
     reelTitle.textContent = card.dataset.title;

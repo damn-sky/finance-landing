@@ -83,23 +83,39 @@ section { padding-top: 40px; }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
 .person { padding: 12px 12px 18px; }
-.person img { width: 100%; height: 280px; object-fit: cover; object-position: center top; border-radius: 12px; display: block; }
+.person img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  height: auto;
+  object-fit: cover;
+  object-position: center 18%;
+  border-radius: 14px;
+  display: block;
+}
 .person h3, .person p { margin: 10px 8px 0; }
 .tenure { color: var(--navy); font-size: 14px; font-weight: 700; }
-.reel-wrap { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; }
-.reels { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+.reel-wrap { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; margin: 0 -6vw; }
+.reels {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 6vw 16px;
+  cursor: grab;
+}
+.reels.is-dragging { cursor: grabbing; scroll-snap-type: none; }
 .reel {
-  flex: 0 0 200px;
+  flex: 0 0 280px;
   scroll-snap-align: start;
   position: relative;
   border: 0;
   padding: 0;
-  border-radius: 18px;
+  border-radius: 22px;
   overflow: hidden;
   cursor: pointer;
   background: #111;
 }
-.reel img { width: 100%; height: 340px; object-fit: cover; display: block; }
+.reel img { width: 100%; height: 500px; object-fit: cover; display: block; pointer-events: none; }
 .reel span {
   position: absolute;
   left: 12px;
